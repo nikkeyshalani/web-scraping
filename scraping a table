@@ -19,8 +19,9 @@ df = pd.DataFrame(columns = header)
 tr = tab.find_all('tr')[1:]
 for i in tr:
     td=i.find_all('td')
-    row = [j for j in td ]
+    row = [j.text for j in td ]
     length = len(df)
     df.loc[length] = row
 print(df)
+df.to_csv(r'C:\Users\hp\Desktop\soup\file3.csv', index=False)
 
